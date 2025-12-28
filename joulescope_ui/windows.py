@@ -55,7 +55,7 @@ def run_powershell_script_as_admin(script):
              "-Verb", "runAs"],
             capture_output=True,
             check=True,
-            shell=True,
+            shell=False,  # Changed from shell=True to shell=False
         )
         _log.info(f'PowerShell script executed successfully:\n{process.stdout.decode(errors="ignore")}')
     except subprocess.CalledProcessError as e:
